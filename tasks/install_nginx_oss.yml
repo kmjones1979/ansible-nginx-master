@@ -1,0 +1,14 @@
+# ./tasks/install_nginx.yml
+
+- name: install the nginx rpm
+  yum: name={{ nginx_yum_rpm }} state=present
+
+- name: NGINX | Installing NGINX
+  yum:
+    name: nginx
+    state: latest
+
+- name: NGINX | Starting NGINX
+  service:
+    name: nginx
+    state: restarted
